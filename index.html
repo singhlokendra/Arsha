@@ -9,15 +9,54 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     
     <style>
-        @keyframes slowBounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
+       
+        .menu:hover{
+            transform: scale(1.2);
+            transition: all,1s,ease-in,1s;
         }
+        .hero:hover{
+            transition: all,2s,ease-in,1s;
+            box-shadow: 0px 8px 10px 1px rgba(0, 0, 0, 0.2);
+            transform: translateY(-8px);
+        }
+        .port-image:hover{
+            transform: scale(1.2);
+            transition: all,1s,ease-in,1s;
+            overflow: hidden;
+
+        }
+
+        .box:hover{
+            background-color: black;
+            color: white;
+            transition: all,1s,ease-in,2s;
+            transform: scale(0.7);
+            transform: scale(1);
+
+
+        }
+       
+        @keyframes fadeIn {
+           from { opacity: 0;
+            transform: scale(0);
+                
+         }
+           to { opacity: 1;
+            transform: scale(1);
+
+            
+        }
+
+       }
+
+       .my-animation{
+        animation: fadeIn 2s ease-in-out;
+       }
+
+     
         
+
+
     </style>
 </head>
 <body class="">
@@ -26,18 +65,18 @@
             <div class="w-2/6 md:pr-6">
                 <h1 class="text-white text-3xl font-bold py-2 px-2">ARSHA</h1>
             </div>
-            <div class="dropdown-menu absolute top-16 flex flex-col  text-white font-semibold left-0 items-center w-full bg-[#37517e] gap-4 md:static md:flex md:flex-row   md:justify-center md:pt-2 md:whitespace-nowrap md:gap-3">
+            <div class="dropdown-menu absolute top-16 flex flex-col  text-white font-semibold left-0 items-center w-full bg-[#37517e] gap-4 md:static md:flex md:flex-row   md:justify-center md:pt-2 md:whitespace-nowrap md:gap-3 nav-bar" id="hidden">
                 <div class="gap-6 md:space-x-3 flex flex-col md:flex-row md:w-[75%]">
-                <a href="" class="hover:text-[#47b2e4]">Home</a>
-                <a href="" class="hover:text-[#47b2e4]">About</a>
-                <a href="" class="hover:hover:text-[#47b2e4]">Services</a>
-                <a href="" class="hover:text-[#47b2e4]">Portfolio</a>
-                <a href="" class="hover:text-[#47b2e4]">Team</a>
-                <a href="" class="hover:text-[#47b2e4]">Drop Down</a>
-                <a href="" class="hover:text-[#47b2e4]">Contact</a>
+                <a href="" class="hover:text-[#47b2e4] menu">Home</a>
+                <a href="" class="hover:text-[#47b2e4] menu">About</a>
+                <a href="" class="hover:hover:text-[#47b2e4] menu">Services</a>
+                <a href="" class="hover:text-[#47b2e4] menu">Portfolio</a>
+                <a href="" class="hover:text-[#47b2e4] menu">Team</a>
+                <a href="" class="hover:text-[#47b2e4] menu">Drop Down</a>
+                <a href="" class="hover:text-[#47b2e4] menu">Contact</a>
                 </div>
                 
-                <button class="pb-3 border-[#47b2e4] border-2 py-2 w-[80%] rounded-3xl mb-5 hover:bg-[#47b2e4]  md:mt-3  md:rounded-3xl md:w-[14%] md:py-[6px] ">Get Started</button>
+                <button class="menuButton pb-3 border-[#47b2e4] border-2 py-2 w-[80%] rounded-3xl mb-5 hover:bg-[#47b2e4]  md:mt-3  md:rounded-3xl md:w-[14%] md:py-[6px] ">Get Started</button>
             </div>
             <div class="toggle-button pt-3 md:hidden">
                 <i class="fa-solid fa-bars fa-lg text-white"></i>
@@ -49,11 +88,11 @@
 
     <section class="flex h-[100vh] md:overflow-hidden">
         <div class="flex flex-col bg-[#37517e] items-center justify-center md:flex md:flex-row-reverse md:w-full md:px-[72px] ">
-            <div class="image flex flex-1 items-end md:flex-1 md:justify-end md:animate-slowBounce">
+            <div class="image flex flex-1 items-end md:flex-1 md:justify-end my-animation hero">
                 <img src="dist/hero-img.webp" class="object-cover px-5">
             </div>
-            <div class="heading flex flex-1 flex-col  text-center mt-4 gap-3 md:flex-1 md:items-start ">
-                <div class="flex flex-col text-3xl text-white font-bold items-center md:text-left md:px-2">
+            <div class="heading flex flex-1 flex-col  text-center mt-4 gap-3 md:flex-1 md:items-start my-animation ">
+                <div class="flex flex-col text-3xl text-white font-bold items-center md:text-left md:px-2 ">
                     <h1 class="md:text-5xl md:justify-start">Better Solutions For</h1>
                     <h1 class="md:text-5xl md:pr-[135px] md:mt-2">Your Business</h1>
                 </div>
@@ -74,32 +113,32 @@
     </section>
 
     <section class="clints">
-        <div class="flex flex-wrap gap-5 justify-center py-3 md:flex-row md:px-3 md:space-x-2">
-            <div class="w-1/3 p-4 bg-black md:flex-1 md:bg-white ">
-                <img src="dist/Arsha-cli.webp" class="bg-cover md:w-[60%] md:pl-5 md:justify-center">
+        <div class="flex flex-wrap gap-5 justify-center py-3 md:flex-row md:px-3 md:space-x-2 my-animation">
+            <div class="w-1/3 p-4 bg-black md:flex-1 md:bg-white port-image">
+                <img src="dist/Arsha-cli.webp" class="bg-cover md:w-[60%] md:pl-5 md:justify-center md:scale-150 menu">
             </div>
-            <div class="w-1/3 p-4 bg-orange-400 md:flex-1 md:bg-white">
-                <img src="dist/Arsha-cli1.webp" class="bg-cover md:w-[60%] md:pl-5">
+            <div class="w-1/3 p-4 bg-orange-400 md:flex-1 md:bg-white port-image">
+                <img src="dist/Arsha-cli1.webp" class="bg-cover md:w-[60%] md:pl-5 menu">
             </div>
-            <div class="w-1/3 p-4 bg-blue-500 md:flex-1 md:bg-white">
-                <img src="dist/Arsha-cli2.webp" class="bg-cover md:w-[60%] md:pl-5">
+            <div class="w-1/3 p-4 bg-blue-500 md:flex-1 md:bg-white port-image">
+                <img src="dist/Arsha-cli2.webp" class="bg-cover md:w-[60%] menu md:pl-5">
             </div>
-            <div class="w-1/3 p-4 bg-green-500 md:flex-1 md:bg-white md:justify-center">
-                <img src="dist/Arsha-cli3.webp" class="bg-cover md:w-[60%] md:pl-5">
+            <div class="w-1/3 p-4 bg-green-500 md:flex-1 md:bg-white md:justify-center port-image">
+                <img src="dist/Arsha-cli3.webp" class="bg-cover md:w-[60%] menu md:pl-5">
             </div>
-            <div class="w-1/3 p-4 bg-yellow-400 md:flex-1 md:items-center md:bg-white">
-                <img src="dist/Arsha-cli4.webp" class="bg-cover md:w-[60%] md:pl-7 ">
+            <div class="w-1/3 p-4 bg-yellow-400 md:flex-1 md:items-center md:bg-white port-image">
+                <img src="dist/Arsha-cli4.webp" class="bg-cover menu md:w-[60%] md:pl-7 ">
             </div>
-            <div class="w-1/3 p-4 bg-pink-400 md:flex-1 md:bg-white">
-                <img src="dist/Arsha-cli5.webp" class="bg-cover md:w-[60%] md:pl-7">
+            <div class="w-1/3 p-4 bg-pink-400 md:flex-1 md:bg-white port-image">
+                <img src="dist/Arsha-cli5.webp" class="bg-cover menu md:w-[60%] md:pl-7">
             </div>
         </div>
         
     </section>
     
 
-    <section class="my-5">
-        <div class="flex flex-col md:px-10">
+    <section class="my-5 my-animation">
+        <div class="flex flex-col md:px-10 box">
             <div class="py-7">
                 <h1 class="text-center text-3xl font-bold">ABOUT US</h1>
             </div>
@@ -138,7 +177,7 @@
 
     <section class="bg-[#f3f5fa] my-6 mb-10">
         <div class="md:flex md:flex-row-reverse md:">
-            <div class="flex flex-1 py-16 px-3 md:flex-1 md:items-center">
+            <div class="flex flex-1 py-16 px-3 md:flex-1 md:items-center hero">
                 <img src="dist/Arsha-banner.webp" class="bg-cover md:h-[80%]">
             </div>
             <div class="flex flex-col gap-1 md:flex-1 md:px-12 md:py-20">
@@ -173,7 +212,7 @@
     <section class="">
         <div class="flex flex-col gap-4 md:flex md:flex-row px-7 md:py-12 md:px-16">
             
-            <div class="px-3 flex-1 md:py-12">
+            <div class="px-3 flex-1 md:py-12 hero">
                 <img src="dist/Arsha-banner1.webp" class="bg-cover" alt="">
             </div>
             <div class="flex-1">
@@ -313,20 +352,20 @@
 
             </div>
             <div class="flex gap-5 px-6 flex-col md:flex-row">
-                <div class="flex flex-col bg-cover gap-5 flex-1">
-                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-1.jpg" alt="">
-                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-6.jpg" alt="">
+                <div class="flex flex-col bg-cover gap-5 flex-1 overflow-hidden">
+                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-1.jpg" class="port-image ">
+                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-6.jpg " class="port-image " >
                 </div>
-                <div class="flex flex-col gap-5 bg-cover flex-1">
-                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-2.jpg" alt="">
-                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-5.jpg" alt="">
-                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-9.jpg" alt="">
+                <div class="flex flex-col gap-5 bg-cover flex-1  overflow-hidden">
+                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-2.jpg " class="port-image">
+                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-5.jpg" class="port-image">
+                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-9.jpg" class="port-image">
                 </div>
-                <div class="flex flex-col gap-5 bg-cover flex-1">
-                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-4.jpg" alt="">
-                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-7.jpg" alt="">
-                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-8.jpg" alt="">
-                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-3.jpg" alt="">
+                <div class="flex flex-col gap-5 bg-cover flex-1 overflow-hidden">
+                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-4.jpg " class="port-image" alt="">
+                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-7.jpg" class="port-image">
+                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-8.jpg" class="port-image">
+                    <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/portfolio/portfolio-3.jpg" class="port-image">
                 </div>  
             </div>
             
@@ -341,15 +380,15 @@
             <div class="px-14 md:mb-6">
                 <p class="text-center text-[#444444]">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
             </div>
-            <div class="pb-5 md:flex md:flex-wrap md:px-10 md:pb-16">
+            <div class="pb-5 md:flex md:flex-wrap md:px-10 md:pb-16 team">
                 <div class="flex px-4 mt-5 md:w-[50%]">
-                    <div class="flex flex-row bg-white w-full gap-6 px-8 rounded-md shadow-md">
+                    <div class="team flex flex-row bg-white w-full gap-6 px-8 rounded-md shadow-md hero">
             
                         <div class="pt-8">
                             <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/team/team-1.jpg" class="bg-cover w-32 rounded-full">
                         </div>
                         
-                        <div class="flex flex-col gap-2">
+                        <div class="flex flex-col gap-2 ">
                             <div>
                                 <h1 class="text-xl pt-6 text-[#37517e] font-bold">Walter White</h1>
                                 <span class="">Chief Executive <br>Officer</span>
@@ -378,7 +417,7 @@
                 </div>
             
                 <div class="flex px-4 mt-5 md:w-[50%]">
-                    <div class="flex flex-row bg-white w-full gap-6 px-8 rounded-md shadow-md">
+                    <div class="flex flex-row bg-white w-full gap-6 px-8 rounded-md shadow-md hero">
             
                         <div class="pt-8">
                             <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/team/team-2.jpg" class="bg-cover w-32 rounded-full">
@@ -412,7 +451,7 @@
                     </div>
                 </div>
                 <div class="flex px-4 mt-5 md:w-[50%]">
-                    <div class="flex flex-row bg-white w-full gap-6 px-8 rounded-md shadow-md">
+                    <div class="flex flex-row bg-white w-full gap-6 px-8 rounded-md shadow-md hero">
             
                         <div class="pt-8">
                             <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/team/team-3.jpg" class="bg-cover w-32 rounded-full">
@@ -446,7 +485,7 @@
                     </div>
                 </div>
                 <div class="flex px-4 mt-5 md:w-[50%]">
-                    <div class="flex flex-row bg-white w-full gap-6 px-8 rounded-md shadow-md">
+                    <div class="flex flex-row bg-white w-full gap-6 px-8 rounded-md shadow-md team hero">
             
                         <div class="pt-8">
                             <img src="https://bootstrapmade.com/demo/templates/Arsha/assets/img/team/team-4.jpg" class="bg-cover w-32 rounded-full">
